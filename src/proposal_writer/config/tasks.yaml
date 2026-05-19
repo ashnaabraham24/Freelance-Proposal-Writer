@@ -1,0 +1,106 @@
+analyze_project:
+  description: >
+    Analyze the following freelance project:
+
+    {project_description}
+
+    Produce:
+
+    - Project summary
+    - Scope breakdown
+    - Expected deliverables
+    - Project risks
+    - Likely client concerns
+    - Recommended execution approach
+
+    Project risks may include:
+    timeline risk,
+    scope expansion,
+    technical complexity,
+    unclear requirements,
+    deployment issues.
+
+    Client concerns may include:
+    delivery speed,
+    cost,
+    maintainability,
+    usability,
+    scalability.
+
+  expected_output: >
+    Structured analysis including:
+    - project summary
+    - scope breakdown
+    - expected deliverables
+    - project risks
+    - likely client concerns
+    - execution approach
+
+  agent: project_analyzer
+
+
+write_proposal:
+  description: >
+    Using the project analysis from previous task,
+    generate a complete freelance proposal.
+
+    IMPORTANT:
+
+    Extract the client's requested timeline EXACTLY.
+
+    DO NOT modify timeline.
+
+    Count deliverables.
+
+    BEFORE writing proposal:
+
+    Call Timeline Validator.
+
+    Pass:
+    deliverables = extracted count
+    days = extracted timeline
+
+    Include validator output exactly.
+
+    Include project risks and client concerns
+    from Project Analyzer output.
+
+    Proposal must include:
+
+    - Introduction
+    - Project Understanding
+    - Execution Approach
+    - Project Risks
+    - Likely Client Concerns
+    - Estimated Timeline
+    - Deliverables
+    - Timeline Validation Result
+    - Closing Statement
+
+  expected_output: >
+    Complete proposal including:
+    - risks
+    - client concerns
+    - deliverables
+    - timeline validation result
+    - execution approach
+
+  agent: proposal_writer
+
+
+create_pricing:
+  description: >
+    Create pricing packages.
+
+    Include:
+
+    Basic
+    Standard
+    Premium
+
+    Mention what is included in each package.
+
+  expected_output: >
+    Three pricing plans with included features.
+
+  agent: pricing_strategist
