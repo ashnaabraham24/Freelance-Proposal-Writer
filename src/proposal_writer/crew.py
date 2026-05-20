@@ -56,7 +56,7 @@ class ProposalWriter():
 
         return Task(
             config=self.tasks_config["create_pricing"],
-            output_file="output/proposal.md"
+            # output_file="output/proposal.md"
         )
 
     @crew

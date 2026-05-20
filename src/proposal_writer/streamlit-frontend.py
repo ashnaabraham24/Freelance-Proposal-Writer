@@ -39,6 +39,20 @@ def main():
                 result.tasks_output[2].raw
             )
 
+            full_output = (
+                result.tasks_output[1].raw
+                + "\n\n"
+                + result.tasks_output[2].raw
+            )
+
+            with open(
+                "output/proposal.md",
+                "w",
+                encoding="utf-8"
+            ) as f:
+
+                f.write(full_output)
+
         else:
 
             st.sidebar.error(
